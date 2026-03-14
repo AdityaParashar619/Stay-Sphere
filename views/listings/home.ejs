@@ -19,7 +19,7 @@
 <div class="row row-col-3">
         <% for(let data of listing) { %>
             <div class="card listing-card" style="width: 18rem;">
-                <a href="http://localhost:8080/listings/<%=data.id%>">
+                <a href="/listings/<%=data.id%>">
                 <img src="<%= data.image.url%>" class="card-img-top" alt="listing image">
                     <div class="card-img-overlay" id="heart">
                         <i class="fa-solid fa-heart" style="color:rgb(255,255,255,0.7); margin-left: 15rem"></i>
