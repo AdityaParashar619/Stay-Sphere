@@ -5,7 +5,7 @@ const {validateReview,isLoggedIn, isReviewAuthor}=require("../middleware/middlew
 
 
 //to require the controllers
-const reviewController=require("../controllers/all_Reviews.js");
+const reviewController=require("../controllers/all_reviews.js");
 
 //to add the review (post route)
 router.post('/listings/:id/reviews',isLoggedIn,validateReview,wrapAsync(reviewController.addReview))
