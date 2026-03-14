@@ -33,7 +33,7 @@
 </div>
         <% if(curUser && curUser._id.equals(lists.owner._id)){ %>
         <div class="btns" >
-        <a href="http://localhost:8080/listings/<%=lists.id%>/edit">
+        <a href="/listings/<%=lists.id%>/edit">
             <button class="show_edit" type="submit" >Edit this list</button>
         </a>
 <form action="/listings/<%=lists.id%>?_method=DELETE" method="POST">

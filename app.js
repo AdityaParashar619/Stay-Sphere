@@ -15,6 +15,8 @@ const User=require('./models/user.js');
 //for our cloud server
 
 console.log(process.env.CLOUD_NAME);
+console.log(process.env.DB_URL);
+
 
 //require the router
 const listingsRouter=require("./routes/listings.js");
