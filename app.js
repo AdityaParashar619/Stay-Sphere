@@ -2,6 +2,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+//for our cloud server
+if(process.env.NODE_ENV != 'production'){
+    require('dotenv').config();
+}
 const mongoose = require('mongoose');
 var methodOverride = require('method-override');
 const expressError=require("./utils/expressError.js");
@@ -9,10 +13,7 @@ const expressError=require("./utils/expressError.js");
 const passport = require('passport');
 const LocalStrategy=require('passport-local');
 const User=require('./models/user.js');
-//for our cloud server
-if(process.env.NODE_ENV != 'production'){
-    require('dotenv').config();
-}
+
 console.log(process.env.CLOUD_NAME);
 
 //require the router
@@ -28,7 +29,7 @@ const ejsMate = require('ejs-mate');
 //set the engine
 app.engine('ejs', ejsMate);
 //making a port
-const port=8080;
+const port=process.env.PORT || 8080;
 
 //require the data
 const Data = require('./init/data.js');
@@ -36,7 +37,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 //making function main for mongoose
 async function main(){
-    await mongoose.connect("mongodb://127.0.0.1:27017/StaySphere")
+    await mongoose.connect(process.env.DB_URL)
 }
 main().then(()=>{
     console.log("MongoDB Connected");

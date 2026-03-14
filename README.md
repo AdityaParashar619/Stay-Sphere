@@ -112,10 +112,10 @@ SESSION_SECRET=
 
 ## Installation
 
-Clone repository
+Git repository
 
 ```
-
+https://github.com/AdityaParashar619/Stay-Sphere.git
 ```
 
 Install dependencies
