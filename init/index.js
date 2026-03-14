@@ -1,10 +1,11 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const initData=require('./data.js');
 const Listing=require('../models/listing.js');
 
 //making function main for mongoose
 async function main(){
-    await mongoose.connect("mongodb://127.0.0.1:27017/StaySphere")
+    await mongoose.connect(process.env.DB_URL)
 }
 main().then(()=>{
     console.log("MongoDB Connected");

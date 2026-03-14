@@ -2,7 +2,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-//for our cloud server
 if(process.env.NODE_ENV != 'production'){
     require('dotenv').config();
 }
@@ -13,6 +12,7 @@ const expressError=require("./utils/expressError.js");
 const passport = require('passport');
 const LocalStrategy=require('passport-local');
 const User=require('./models/user.js');
+//for our cloud server
 
 console.log(process.env.CLOUD_NAME);
 
