@@ -63,7 +63,9 @@ app.use(session(sessionOptions));
 app.use(flash());
 
 //code for passport authentication
-
+app.get('/',(req,res)=>{
+    res.redirect('/listings');
+})
 //method to initialize passport
 app.use(passport.initialize());
 //ye btayega ki user ek session ke andar passport ka use krega (sb kuch session ke antral me hoga)

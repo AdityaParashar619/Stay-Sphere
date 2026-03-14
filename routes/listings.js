@@ -14,9 +14,6 @@ const {isLoggedIn,isOwner,validateListing}=require("../middleware/middleware.js"
 const listingController=require("../controllers/all_Listings.js");
 
 //index and post route to home page or add a new listing
-router.get('/',(req,res)=>{
-    res.redirect(`/listings`);
-})
 router.route('/')
     .get(wrapAsync(listingController.index))
     .post(isLoggedIn,upload.single('lists[image]'),validateListing,wrapAsync(listingController.add))
