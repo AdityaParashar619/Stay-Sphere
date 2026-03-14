@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+
+<div class="whole">
+    <% if (success && success.length > 0) { %>
+        <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+            <%= success[0] %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+    <% if (errors && errors.length > 0) { %>
+        <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+            <%= errors[0] %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+        <h3>Here are your all Listings</h3>
+<div class="row row-col-3">
+        <% for(let data of listing) { %>
+            <div class="card listing-card" style="width: 18rem;">
+                <a href="http://localhost:8080/listings/<%=data.id%>">
+                <img src="<%= data.image.url%>" class="card-img-top" alt="listing image">
+                    <div class="card-img-overlay" id="heart">
+                        <i class="fa-solid fa-heart" style="color:rgb(255,255,255,0.7); margin-left: 15rem"></i>
+                    </div>
+                <i class="fa-solid fa-heart"></i>
+                <div class="card-body">
+                    <p class="card-text">
+                        <%=data.title%>
+                         &#8377;<%=data.price%>/night</p>
+                </div>
+                </a>
+            </div>
+        <%}%>
+    </div>
+</div>
+</body>

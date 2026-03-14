@@ -1,0 +1,30 @@
+.error{
+    background-color: rgb(211, 211, 211);
+    width: 100%;
+    height: 439px;
+    margin-top: 60px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.error-image{
+    align-self: center;
+    margin-left:-80px;
+}
+.error-image img
+{  border-radius: 5%;}
+.error-message{
+    align-self: center;
+    width: 300px;
+    margin-left:-100px;
+}
+.error-message button {
+    align-self: center;
+    background-color: orangered;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 7%;
+    border: none !important;
+    margin-left:2rem;
+}

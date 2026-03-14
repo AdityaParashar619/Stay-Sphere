@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+<div class="new">
+<div class="row offset-2 " style="margin-top:5%; padding-left:4%">
+<h2>Creating a new List</h2>
+<div class="col-8 ">
+
+    <form action="/listings" method="POST" novalidate class="needs-validation"  enctype="multipart/form-data">
+        <div class="mb-3">
+        <label for="newTitle" class="form-label">Title </label>
+        <input name="lists[title]" type="text" placeholder="enter crazy title" id="newTitle" class="form-control" required>
+            <div class="invalid-feedback">
+                Title should be valid.
+            </div>
+        </div><div class="mb-3">
+        <label for="newDescription" class="form-label">Description </label>
+        <textarea name="lists[description]" placeholder="something about it!!" id="newDescription" class="form-control" required></textarea>
+            <div class="invalid-feedback">
+                Description should be short.
+            </div>
+        </div><div class="mb-3">
+        <label for="newImage" class="form-label">Upload Image </label>
+<!--            it is for to upload an image not image link-->
+        <input name="lists[image]" type="file" id="newImage" class="form-control">
+            </div>
+        <div class="row">
+        <div class="mb-3 col-4">
+        <label for="newPrice" class="form-label">Price </label>
+        <input  name="lists[price]" type="number" placeholder="1200" id="newPrice" class="form-control" required>
+            <div class="invalid-feedback">
+                Price should be valid.
+            </div>
+            </div><div class="mb-3 col-8">
+            <label for="newCountry" class="form-label">Country </label>
+            <input name="lists[country]" type="text" placeholder="India" id="newCountry" class="form-control" required>
+                <div class="invalid-feedback">
+                    Country name should be valid.
+                </div>
+        </div></div>
+            <div class="mb-3">
+        <label for="newLocation" class="form-label">Location </label>
+        <input name="lists[location]" type="text" placeholder="Udaipur, Rajasthan" id="newLocation" class="form-control" required>
+                <div class="invalid-feedback">
+                    Location should be valid.
+                </div>
+                    </div><br>
+        <button class="btn btn-dark" type="submit" style="background-color: orangered; border: none">Submit</button>
+    </form>
+</div>
+</div>
+<br><br>
+</div>
+
+</body>

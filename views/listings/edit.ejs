@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+<div class="row offset-2" style="margin-top: 5%">
+<h3>Edit the list <i><%=list.title%></i></h3>
+<div class="col-8 " style="margin-top:3%">
+    <form  action="/listings/<%=list._id%>?_method=PUT" method="POST" novalidate class="needs-validation">
+        <div class="mb-3">
+        <label for="Title" class="form-label">Title </label>
+        <input type="text" id="Title" name="lists[title]" value="<%=list.title%>" class="form-control" required>
+            <div class="invalid-feedback">
+                Title should be valid.
+            </div>
+        </div><div class="mb-3">
+        <label for="Description" class="form-label">Description </label>
+        <input type="text" id="Description" name="lists[description]" value="<%=list.description%>" class="form-control" required>
+            <div class="invalid-feedback">
+                Description should be short.
+            </div>
+            </div><div class="mb-3">
+            <label for="Image" class="form-label">Image </label>
+            <input type="text" name="lists[image]" id="Image" value="<%=list.image%>"  class="form-control">
+        </div>
+        <div class="row">
+            <div class="mb-3 col-4">
+                <label for="Price" class="form-label">Price </label>
+                <input  id="Price" name="lists[price]" value="<%=list.price%>" class="form-control" required>
+                <div class="invalid-feedback">
+                    Price should be valid.
+                </div>
+            </div><div class="mb-3 col-8">
+                <label for="Country" class="form-label">Country </label>
+                <input type="text" name="lists[country]" id="Country" value="<%=list.country%>" class="form-control" required>
+                <div class="invalid-feedback">
+                    Country name should be valid.
+                </div>
+            </div></div><div class="mb-3">
+        <label for="Location" class="form-label">Location </label>
+        <input type="text" id="Location" name="lists[location]" value="<%=list.location%>" class="form-control" required>
+            <div class="invalid-feedback">
+                Location should be valid.
+            </div>
+                    </div><br>
+        <button class="btn btn-dark edit-btn" type="submit" style="background-color: orangered; border: none;">Submit</button>
+    </form>
+</div>
+</div>
+</body>

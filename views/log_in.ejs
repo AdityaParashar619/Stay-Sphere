@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+<div class="wrapper">
+<!--    <div class="row offset-2 " style="margin-top:5%">-->
+<div class="flash">
+        <% if (errors && errors.length > 0) { %>
+            <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+                <%= errors[0] %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% } %>
+</div>
+<div class="log_in">
+            <div class="row offset-1 ">
+                <div class="side1">
+                    <img src="https://media.cntraveler.com/photos/62268dd5ade6e949efe17508/master/w_1600%2Cc_limit/Airbnb%252036174093_6d67fb98-8416-4ab3-8565-69f86a11841c.jpeg" alt="log in image">
+                </div></div>
+            <div class="side2">
+        <div class="col-9 offset-5 mt-5 ">
+            <h2>Log in</h2><br>
+            <form method="POST" action="/log_in" novalidate class="needs-validation">
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username </label>
+                    <input type="text" placeholder="enter Username" name="username" id="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password </label>
+                    <input type="password" placeholder="enter Password" name="password" id="password" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Password should be valid.
+                    </div>
+                </div><br>
+                <button class="btn btn-dark" type="submit" style="background-color: dodgerblue; border: none">Submit</button>
+            </form>
+            <hr><br>
+            <p>new to Stay Sphere !! <a href="http://localhost:8080/sign_up">sign_up</a></p>
+        </div>
+    </div>
+    </div>
+</div>
+<!--</div>-->
+</body>

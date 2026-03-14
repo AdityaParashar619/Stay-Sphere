@@ -1,0 +1,16 @@
+<% layout("/layouts/boilerplate") -%>
+
+<div class="error">
+<div class="error-image">
+    <img src="https://imgix.ranker.com/user_node_img/80/1586942/original/mike-wazowski-film-characters-photo-u1" alt="error image">
+</div>
+    <div class="error-message">
+        <h1> OOPS!!! PAGE NOT FOUND.</h1><br>
+        <p>You must have picked the wrong door because i haven't been able to lay my eye on page you have been searching for.</p>
+        <p><%=err.message%></p>
+        <br>
+        <form action="http://localhost:8080/listings">
+        <button type="submit">Back to Home</button>
+        </form>
+    </div>
+</div>
