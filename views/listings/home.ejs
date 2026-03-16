@@ -1,7 +1,5 @@
 <% layout("/layouts/boilerplate") -%>
 
-<body>
-
 <div class="whole">
     <% if (success && success.length > 0) { %>
         <div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
@@ -15,7 +13,64 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     <% } %>
-        <h3>Here are your all Listings</h3>
+        <div id="filters">
+            <div class="filter">
+                <div><i class="fa-solid fa-hotel"></i></div>
+                <p>Hotels</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-fire-flame-curved"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-city"></i></div>
+                <p>Iconic cities</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain"></i></div>
+                <p>Mountains</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Pools</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-heart-circle-check"></i></div>
+                <p>Favourites</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-tractor"></i></div>
+                <p>Farms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-tent"></i></div>
+                <p>Camping</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-tree"></i></div>
+                <p>Forest</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castle</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-snowflake"></i></div>
+                <p>Arctic</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                <p>Beaches</p>
+            </div>
+
+            <div class="switch-toggle">
+                <div class="form-check form-switch form-check-reverse">
+                    <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                    <label class="form-check-label" for="switchCheckDefault" style="cursor: pointer">Display total after taxes</label>
+                </div>
+            </div>
+        </div>
+
 <div class="row row-col-3">
         <% for(let data of listing) { %>
             <div class="card listing-card" style="width: 18rem;">
@@ -26,13 +81,26 @@
                     </div>
                 <i class="fa-solid fa-heart"></i>
                 <div class="card-body">
-                    <p class="card-text">
+                    <p class="card-text text">
                         <%=data.title%>
-                         &#8377;<%=data.price%>/night</p>
+                         &#8377;<%=data.price%>/night <span class="taxes">+ 18%GST</span></p>
                 </div>
                 </a>
             </div>
         <%}%>
     </div>
 </div>
-</body>
+
+
+<script>
+    let toggle=document.getElementById("switchCheckDefault");
+    toggle.addEventListener('click', ()=>{
+        let taxes=document.getElementsByClassName('taxes');
+        for(let tax of taxes ){
+            if(tax.style.display !== 'inline'){
+                tax.style.display = 'inline';}
+            else{
+                tax.style.display = 'none';}
+        }
+    })
+</script>

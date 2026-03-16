@@ -1,0 +1,359 @@
+/*styling for error page*/
+.error{
+    background-color: rgb(211, 211, 211);
+    width: 100%;
+    height: 439px;
+    margin-top: 60px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.error-image{
+    align-self: center;
+    margin-left:-80px;
+}
+.error-image img
+{  border-radius: 5%;}
+.error-message{
+    align-self: center;
+    width: 300px;
+    margin-left:-100px;
+}
+.error-message button {
+    align-self: center;
+    background-color: orangered;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 7%;
+    border: none !important;
+    margin-left:2rem;
+}
+
+
+
+/*styling for footer page*/
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
+.footer{
+    display: flex;
+    border-top: 2px solid rgb(128,128,128,0.5);
+    width: 100%;
+    height: 150px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin-top: 30px;
+    padding-top: 20px;
+    background-color: rgb(128,128,128,0.2);
+}
+.footer a{
+    text-decoration: none;
+    color: black;
+}
+.links{
+    margin-left: 45%;
+    padding-left: 3%;
+    font-weight: bold;
+}
+.details{
+    width: 500px;
+}
+.details a:hover{
+    text-decoration: underline;
+}
+
+
+
+/*styling for home page*/
+body{
+    margin: 0;
+    padding: 0;
+}
+.whole{
+    width: 100%;
+    height: 100%;
+    margin-top: 4%;
+}
+#filters{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+
+}
+.filter{
+    text-align: center;
+    margin-right: 2rem;
+    opacity: 0.7;
+}
+.filter p{
+    font-size: smaller;
+}
+.filter:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.listing-card{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    border: none !important;
+    border-radius: 1rem;
+    align-content: center;
+}
+.listing-card:hover{
+    box-shadow: 1px 1px 5px rgb(128, 128, 128);
+    transition: box-shadow 0.5s;
+}
+.card i{
+    color: rgb(255,255,255,0.5);
+    margin-top: -90%;
+    margin-left: 84%;
+    height: 1px;
+    width: 1px;
+}
+.card img{
+    width: 270px;
+    height: 270px;
+    border-radius: 5%;
+    align-self: center;
+    padding-top: 1rem;
+}
+.taxes{
+    display: none;
+}
+.switch-toggle{
+    text-align: center;
+    margin-left: 3.5rem;
+    border: 2px solid lightgray;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 15rem;
+    padding:0.4rem 1rem 0 0;
+    border-radius: 1rem;
+}
+.search-bar{
+    margin-left: 44rem;
+}
+.search-btn i{
+    display:inline;
+    margin-right: 0.5rem;
+}
+.search-bar button{
+    color: white;
+    background-color: orangered;
+    border-radius: 1rem;
+    font-size: small;
+}
+.search-bar button:hover{
+    color: white;
+    background-color: orangered;
+}
+.search-bar input{
+    text-align: center;
+    width: 15rem;
+    border-radius: 1rem;
+    padding-left: 2rem;
+    font-size: 0.9rem;
+}
+.switch-toggle:hover{
+    box-shadow: 1px 1px 3px rgb(128, 128, 128);
+}
+.row a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.card-body{
+    margin-top: -1.5rem !important;
+    z-index: auto;
+}
+.edit{
+    width: 100px;
+    border-radius: 10%;
+    border: 1.5px solid lightgray;
+}
+.button{
+    width: 200px;
+    border-radius: 10%;
+    border: 1.5px solid lightgray;
+    margin-right: 2rem;
+}
+.edit:hover{
+    box-shadow: 1px 1px 2px rgb(128, 128, 128);
+    transition: box-shadow 0.3s;
+}
+.button:hover{
+    box-shadow: 1px 1px 2px rgb(128, 128, 128);
+    transition: box-shadow 0.3s;
+}
+.button2{
+    align: center;
+    z-index: 2;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+
+
+
+/*styling for navbar page*/
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#nothing{
+    flex-grow: 1;
+}
+#logo{
+    color: red;
+    font-size: 30px;
+}
+.add{
+    margin-left: 30px;
+}
+.container-fluid a{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+
+}
+
+.container-fluid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* styling for new page */
+.new{
+    position: relative;
+}
+.new::before{
+    content: "";
+    position: absolute;
+    background-image: url("https://i.etsystatic.com/43906084/r/il/2398ba/5031237663/il_570xN.5031237663_f29g.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+    border-radius: 3%;
+}
+.row{
+    position: relative;
+    z-index: 1;
+}
+
+/* styling for show page */
+#show{
+    margin-top: 5%;
+}
+#show img{
+    width: 400px;
+    height: 400px;
+    margin-left: 65%;
+    border-radius: 5%;
+}
+#show img:hover{
+    box-shadow: 2px 2px 5px rgb(128, 128, 128);
+    transition: box-shadow 0.3s ease;
+}
+.description{
+    margin-top: 5%;
+}
+.btns{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.show_edit{
+    background-color: orangered;
+    color: white;
+    height: 2.2rem;
+    width: 8rem;
+    border: none;
+    border-radius: 5px;
+    /*margin-left: 3rem;*/
+}
+.btn{
+    /*margin-left: 15rem;*/
+}
+
+/*styling for map*/
+#map{
+    height: 350px;
+    border: 2px solid black;
+    width: 80vh;
+}
+
+
+
+
+/*styling for signup page*/
+.sign-up{
+    position: relative;
+    display: flex;
+    margin-top: 5rem;
+    margin-left: 14rem;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    width: 850px;
+}
+/*.sign-up::before{*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    !*background-image: url("https://i.etsystatic.com/43906084/r/il/2398ba/5031237663/il_570xN.5031237663_f29g.jpg");*!*/
+/*    !*background-size: cover;*!*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    opacity: 0.5;*/
+/*    z-index: -1;*/
+/*    border-radius: 3%;*/
+/*}*/
+.side1 img{
+    width: 380px;
+    height: 500px;
+    margin-left: -5.15rem;
+}
+.side2{
+
+    width: 500px;
+    margin-left: -11rem;
+    margin-top: 1rem;;
+}
+.row{
+    position: relative;
+    z-index: 1;
+}
+
+/*styling for login page*/
+.log_in{
+    position: relative;
+    display: flex;
+    margin-top: 5rem;
+    margin-left: 14rem;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    width: 850px;
+}
+.flash{
+    margin-bottom: -4.7rem;
+    margin-top: -1rem;
+}
+.wrapper{
+    position: relative;
+    padding-top: 4.3rem;
+}

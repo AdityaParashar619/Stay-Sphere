@@ -37,7 +37,20 @@ const listingSchema=new mongoose.Schema({
     owner:{
         type:Schema.Types.ObjectId,
         ref:'User',
+    },
+
+    geometry:{
+        type:{
+            type:String,
+            enum:["Point"],
+
+        },
+        coordinates:{
+            type:[Number],
+
+        }
     }
+
 });
 
 //now making a post middleware to delete the reviews

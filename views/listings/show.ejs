@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate") -%>
-<body>
+
 <div class="row offset-2" id="show" >
     <div class="flash2" style="margin-left:-7rem">
     <% if (success && success.length > 0) { %>
@@ -80,7 +80,7 @@
         <br>
         <hr>
 <!--        showing all reviews-->
-
+<% if(lists.review.length>0) {%>
             <h4>All Reviews :</h4>
         <div class="row">
 
@@ -103,9 +103,34 @@
                 </div>
             <%}%>
         </div>
+        <%}%>
+        <h4> Where you'll see</h4>
+        <div class="col-8" id="map"></div>
     </div>
 </div>
-</body>
 
+<script>
+    const coordinates = [
+        <%= lists.geometry.coordinates[1] %>,
+        <%= lists.geometry.coordinates[0] %>
+    ];
 
+    const map = L.map("map").setView(coordinates, 9);
 
+    L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+    ).addTo(map);
+
+    const redIcon = new L.Icon({
+        iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+        shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+        iconSize: [25,41],
+        iconAnchor: [12,41],
+        popupAnchor: [1,-34],
+        shadowSize: [41,41]
+    });
+    L.marker(coordinates,{icon: redIcon})
+        .addTo(map)
+        .bindPopup("<%=lists.title%>")
+
+</script>

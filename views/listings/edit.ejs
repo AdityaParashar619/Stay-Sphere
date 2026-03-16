@@ -3,7 +3,7 @@
 <div class="row offset-2" style="margin-top: 5%">
 <h3>Edit the list <i><%=list.title%></i></h3>
 <div class="col-8 " style="margin-top:3%">
-    <form  action="/listings/<%=list._id%>?_method=PUT" method="POST" novalidate class="needs-validation">
+    <form  action="/listings/<%=list._id%>?_method=PUT" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
         <div class="mb-3">
         <label for="Title" class="form-label">Title </label>
         <input type="text" id="Title" name="lists[title]" value="<%=list.title%>" class="form-control" required>
@@ -16,9 +16,15 @@
             <div class="invalid-feedback">
                 Description should be short.
             </div>
-            </div><div class="mb-3">
-            <label for="Image" class="form-label">Image </label>
-            <input type="text" name="lists[image]" id="Image" value="<%=list.image%>"  class="form-control">
+            </div>
+
+        <div class="mb-1" >
+            Original Image<br>
+            <img style="height: 150px; width:auto" src="<%= originalImage %>" alt="<%=list.title%>">
+        </div>
+        <div class="mb-3">
+            <label for="Image" class="form-label">Change Image </label>
+            <input type="file" name="lists[image]" id="Image"  class="form-control">
         </div>
         <div class="row">
             <div class="mb-3 col-4">

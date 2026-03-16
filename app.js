@@ -12,11 +12,6 @@ const expressError=require("./utils/expressError.js");
 const passport = require('passport');
 const LocalStrategy=require('passport-local');
 const User=require('./models/user.js');
-//for our cloud server
-
-console.log(process.env.CLOUD_NAME);
-console.log(process.env.DB_URL);
-
 
 //require the router
 const listingsRouter=require("./routes/listings.js");
@@ -24,6 +19,7 @@ const reviewsRouter=require("./routes/reviews.js");
 const usersRouter=require("./routes/users.js");
 
 const session=require("express-session");
+const MongoStore = require('connect-mongo');
 const flash=require("connect-flash");
 
 //require ejs_mate
@@ -53,8 +49,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//initialized connect-store(basically session ki info store ho)
+const store=MongoStore.create({
+    mongoUrl:process.env.DB_URL,
+        secret: process.env.SECRET,
+    touchAfter:24*3600
+});
+store.on("error",(err)=>{
+    console.log(err);
+})
 //to set session options
-const sessionOptions={secret:"secret String",resave:false,saveUninitialized:true,
+const sessionOptions={
+    store,
+    secret:process.env.SECRET,
+    resave:false,
+    saveUninitialized:true,
     //cookie expires upto 7 days
     cookie:{
         expires:Date.now()+ 7*24*60*60*1000,
@@ -95,6 +104,20 @@ app.use('/',reviewsRouter);
 
 //use all users route for sign up
 app.use('/',usersRouter);
+
+
+app.use((req,res,next)=>{
+    console.log("REQUEST:", req.method, req.url);
+    next();
+});
+app.use((err,req,res,next)=>{
+    console.log("ERROR STACK ↓");
+    console.error(err.stack);
+    const {status=500,message="Something went wrong"} = err;
+    res.status(status).render("error.ejs",{err});
+});
+
+
 
 //when somehow different route pr jaye info
 app.use((req,res,next)=>{
