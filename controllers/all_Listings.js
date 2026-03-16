@@ -1,5 +1,5 @@
 const Listing=require('../models/listing.js');
-const geocodeLocation = require("../utils/geocode");
+const geocodeLocation = require("../utils/geoCode.js");
 //here we simplify our code by exports all routes function
 
 //index route function
